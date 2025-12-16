@@ -11,7 +11,7 @@ import {
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
-import NextLink from "next/link";
+
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
@@ -22,8 +22,7 @@ import {
 } from "@/components/icons";
 
 export const Navbar = () => {
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<Element>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const element = document.querySelector(href);
@@ -36,13 +35,9 @@ export const Navbar = () => {
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">Portfolio</p>
-          </NextLink>
+        <NavbarBrand as="li" className="gap-3 max-w-fit"> 
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className="hidden lg:flex gap-7 justify-start ml-6">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <Link
