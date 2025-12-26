@@ -11,6 +11,7 @@ import Draggable from 'react-draggable';
 import { useRef } from "react";
 import { CursorifyProvider, DefaultCursor  } from '@cursorify/react'
 import { motion } from "framer-motion";
+import Toaster from "@/components/Toast";
 
 interface Project {
   id: string;
@@ -166,6 +167,7 @@ export default function Home() {
     >
     <div className="flex flex-col gap-16">
       {/* Home / About Me Section */}
+      <Toaster/>
       <section id="home" className="flex flex-col items-center justify-center gap-6 py-12 md:py-16 min-h-[80vh]">
          <Draggable nodeRef={nodeRef}>
           <motion.div

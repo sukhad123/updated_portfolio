@@ -3,7 +3,7 @@ import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
 import CustomCursor from "@/components/CustomCursor";
-
+ 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
