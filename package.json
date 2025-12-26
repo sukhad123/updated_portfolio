@@ -9,6 +9,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@cursorify/react": "^0.0.43",
     "@heroui/accordion": "2.2.25",
     "@heroui/alert": "2.2.28",
     "@heroui/autocomplete": "2.3.30",
@@ -53,11 +54,14 @@
     "@react-aria/visually-hidden": "3.8.28",
     "clsx": "2.1.1",
     "framer-motion": "11.18.2",
+    "gsap": "^3.14.2",
     "intl-messageformat": "10.7.16",
+    "motion": "^12.23.26",
     "next": "15.5.9",
     "next-themes": "0.4.6",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-draggable": "^4.5.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "15.5.9",

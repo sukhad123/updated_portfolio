@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
+import CustomCursor from "@/components/CustomCursor";
 
 import { Providers } from "./providers";
 
@@ -41,7 +42,8 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <CustomCursor/>
+           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
@@ -60,6 +62,8 @@ export default function RootLayout({
             </footer>
           </div>
         </Providers>
+      
+       
       </body>
     </html>
   );

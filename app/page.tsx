@@ -7,6 +7,10 @@ import { Divider } from "@heroui/divider";
 import { title, subtitle } from "@/components/primitives";
 import { Link } from "@heroui/link";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
+import Draggable from 'react-draggable';
+import { useRef } from "react";
+import { CursorifyProvider, DefaultCursor  } from '@cursorify/react'
+import { motion } from "framer-motion";
 
 interface Project {
   id: string;
@@ -126,6 +130,17 @@ const projects: Project[] = [
     githubUrl: "https://github.com/sukhad123/randomProject",
     demoUrl: "https://random-project-beige.vercel.app/",
   },
+    {
+    id: "8",
+    title: "Closing Checklist",
+    subtitle: "A complete solution for closing a restaurant",
+    description: "A comprehensive web application designed to streamline restaurant closure operations, originally developed for use by my previous manager.",
+    icon: "🍽️",
+    gradient: "from-cyan to-blue",
+    technologies: ["HeroUI", "Next.js", "TypeScript"],
+    githubUrl: "https://github.com/sukhad123/randomProject",
+    demoUrl: "https://random-project-beige.vercel.app/",
+  },
   {
     id: "7",
     title: "Lego Data Web Application",
@@ -140,26 +155,54 @@ const projects: Project[] = [
 ];
 
 export default function Home() {
+    const nodeRef = useRef(null);
   return (
+    <CursorifyProvider
+    cursor={<DefaultCursor />}
+      opacity={1}
+      delay={1}
+      defaultCursorVisible={false}
+      breakpoint={997}
+    >
     <div className="flex flex-col gap-16">
       {/* Home / About Me Section */}
       <section id="home" className="flex flex-col items-center justify-center gap-6 py-12 md:py-16 min-h-[80vh]">
-        <Avatar
+         <Draggable nodeRef={nodeRef}>
+          <motion.div
+  drag
+  whileDrag={{
+    scale: 1.1,
+    boxShadow: "0px 10px 20px rgba(0,0,0,0.2)"
+  }}
+>
+  <Avatar ref ={nodeRef}
           src="sukhad.png"
           className="w-32 h-32 text-large"
           name="Your Name"
         />
+</motion.div>
+        
+        </Draggable>
         <div className="inline-block max-w-2xl text-center justify-center">
-          <h1 className={title({ size: "lg" })}>
+           <Draggable nodeRef={nodeRef}>
+          <div ref ={nodeRef} className={title({ size: "lg" })}>
             Hi, I'm <span className={title({ color: "violet", size: "lg" })}>Sukhad Adhikari</span>
-          </h1>
-        <div className={subtitle({ class: "mt-4" })}>
+          </div>
+          </Draggable>
+          <Draggable nodeRef={nodeRef}>
+            <div ref ={nodeRef} className={subtitle({ class: "mt-4" })}>
             Full Stack Developer | Problem Solver | Tech Enthusiast
           </div>
-          <p className="text-default-600 mt-6 text-lg">
+          </Draggable>
+        <Draggable nodeRef={nodeRef}>
+          <div ref ={nodeRef}  >
+             <p className="text-default-600 mt-2 text-lg">
             Welcome to my portfolio! I'm passionate about creating beautiful, functional, and user-friendly applications.
             Explore my work, experience, and projects below.
           </p>
+          </div>
+        </Draggable>
+         
         </div>
         <div className="flex gap-4 mt-4">
           <Link
@@ -354,5 +397,6 @@ export default function Home() {
       </div>
     </section>
     </div>
+    </CursorifyProvider>
   );
 }

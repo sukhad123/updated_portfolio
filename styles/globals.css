@@ -1,3 +1,14 @@
 @import "tailwindcss";
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  
+}
+
+* {
+  cursor: none;
+}
 
 @config "../tailwind.config.js"
