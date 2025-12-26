@@ -188,21 +188,44 @@ export default function Home() {
         <div className="inline-block max-w-2xl text-center justify-center">
            <Draggable nodeRef={nodeRef}>
           <div ref ={nodeRef} className={title({ size: "lg" })}>
+                 <motion.div
+  drag
+  whileDrag={{
+    scale: 1.1,
+    boxShadow: "0px 10px 20px rgba(0,0,0,0.2)"
+  }}
+>
             Hi, I'm <span className={title({ color: "violet", size: "lg" })}>Sukhad Adhikari</span>
-          </div>
+         </motion.div> </div>
           </Draggable>
           <Draggable nodeRef={nodeRef}>
+            
             <div ref ={nodeRef} className={subtitle({ class: "mt-4" })}>
+                         <motion.div
+  drag
+  whileDrag={{
+    scale: 1.1,
+    boxShadow: "0px 10px 20px rgba(0,0,0,0.2)"
+  }}
+>
             Full Stack Developer | Problem Solver | Tech Enthusiast
-          </div>
+          </motion.div> </div>
           </Draggable>
         <Draggable nodeRef={nodeRef}>
+               <motion.div
+  drag
+  whileDrag={{
+    scale: 1.1,
+    boxShadow: "0px 10px 20px rgba(0,0,0,0.2)"
+  }}
+>
           <div ref ={nodeRef}  >
              <p className="text-default-600 mt-2 text-lg">
             Welcome to my portfolio! I'm passionate about creating beautiful, functional, and user-friendly applications.
             Explore my work, experience, and projects below.
           </p>
           </div>
+          </motion.div>
         </Draggable>
          
         </div>
