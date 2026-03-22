@@ -36,8 +36,17 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
-  {
+   {
     id: "1",
+    title: " AI Engineer",
+    company: "Infomax Technologies Corp.",
+    period: "March 2026 - Present",
+    description:"",
+    technologies: ["RAG", "LLM", "AWS"],
+    avatarSrc:'https://image.pitchbook.com/FQ73uf9qcDY1iKygXwt8OOjHRQ31647617339779_200x200'
+  },
+  {
+    id: "2",
     title: "Research Assistant",
     company: "Seneca Applied Research",
     period: "Sep 2025 - Dec 2025",
@@ -46,7 +55,7 @@ const experiences: Experience[] = [
     avatarSrc:'https://tse2.mm.bing.net/th/id/OIP.dDIycw6IeK7iWO5HH-wSQQHaCz?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3'
   },
   {
-    id: "2",
+    id: "3",
     title: "Software Engineer Intern",
     company: "EC Studios / Everyday Chemist",
     period: "Jan 2025 - Aug 2025",
@@ -54,7 +63,7 @@ const experiences: Experience[] = [
     technologies: [  "TypeScript", "Next.js", "AWS", "Docker"],
   },
   {
-    id: "3",
+    id: "4",
     title: "Software Developer Intern",
     company: "Empowered Futures",
     period: "Nov 2024 - Jan 2025",
@@ -208,7 +217,7 @@ export default function Home() {
     boxShadow: "0px 10px 20px rgba(0,0,0,0.2)"
   }}
 >
-            Full Stack Developer | Problem Solver | Tech Enthusiast
+            AI Software Engineer @ Infomax Technologies Corp.
           </motion.div> </div>
           </Draggable>
         <Draggable nodeRef={nodeRef}>
